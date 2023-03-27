@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="kz.kuz.fragmentsactivities">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FragmentApplication">
+        <activity
+            android:name="kz.kuz.fragmentsactivities.MainActivity"
+            android:label="@string/main_title"
+            android:documentLaunchMode="intoExisting"
+            android:exported="true">
+            <!--
+            documentLaunchMode="intoExisting" добавляется, чтобы создаваемая активность добавлялась
+            в новом документе, подчинённом текущей задаче
+            в новый документ будет добавляться эта активность (MainActivity)
+            если она будет создана повторно, то новый документ создаваться больше не будет,
+            просто будет обновлён старый документ
+            если нужно, чтобы новый документ создавался каждый раз, тогда нужно указать
+            documentLaunchMode="always"
+            такого же результата можно достичь, если при создании новых активностей в интенты
+            добавить флаги Intent.FLAG_ACTIVITY_NEW_DOCUMENT и Intent.FLAG_ACTIVITY_MULTIPLE_TASK
+            (подробнее в файлах фрагментов)
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="kz.kuz.fragmentsactivities.SecondActivity">
+        </activity>
+    </application>
+
+</manifest>
